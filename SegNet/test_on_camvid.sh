@@ -8,7 +8,7 @@ python test.py \
     --num_workers 4 \
     --batch_size 16 \
     --best  \
-    --checkpoint "./checkpoint/camvid/SegNetbs8gpu1_train/model_199.pth" \
+    --checkpoint "./checkpoint/camvid/SegNetbs8gpu1_train/model_200.pth" \
     --cuda True \
     # --gpus \
     # --save_seg_dir \
