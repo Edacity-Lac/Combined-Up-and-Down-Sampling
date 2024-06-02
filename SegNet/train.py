@@ -5,7 +5,9 @@ from torch import optim
 import torch.nn as nn
 import timeit
 import math
+import csv
 import numpy as np
+from torchvision.utils import save_image
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
@@ -209,6 +211,8 @@ def train_model(args):
     lossTr_list = []
     epoches = []
     mIOU_val_list = []
+    #加一个acc
+    acc_val_list = []
 
     print('=====> beginning training')
     for epoch in range(start_epoch, args.max_epochs):
@@ -218,23 +222,31 @@ def train_model(args):
         lossTr_list.append(lossTr)
 
         # validation
-        if epoch % 50 == 0 or epoch == (args.max_epochs - 1):
+
+        if epoch % 10 == 0 or epoch == (args.max_epochs - 1):
             epoches.append(epoch)
-            mIOU_val, per_class_iu = val(args, valLoader, model)
+            #这多了一个acc
+            mIOU_val, per_class_iu ,acc= val(args, valLoader, model)
             mIOU_val_list.append(mIOU_val)
+            # 加一个acc
+            acc_val_list.append(acc)
+
+
             # record train information
-            logger.write("\n%d\t\t%.4f\t\t%.4f\t\t%.7f" % (epoch, lossTr, mIOU_val, lr))
+            logger.write("\n%d\t\t%.4f\t\t%.4f\t\t%.7f\t\t%.6f" % (epoch, lossTr, mIOU_val, lr, acc)) #这也加acc信息
             logger.flush()
             print("Epoch : " + str(epoch) + ' Details')
-            print("Epoch No.: %d\tTrain Loss = %.4f\t mIOU(val) = %.4f\t lr= %.6f\n" % (epoch,
+            print("Epoch No.: %d\tTrain Loss = %.4f\t mIOU(val) = %.4f\t lr= %.6f\t acc= %.6f\n" % (epoch,
                                                                                         lossTr,
-                                                                                        mIOU_val, lr))
+                                                                                        mIOU_val, lr, acc)) #这也加acc信息
         else:
             # record train information
             logger.write("\n%d\t\t%.4f\t\t\t\t%.7f" % (epoch, lossTr, lr))
             logger.flush()
             print("Epoch : " + str(epoch) + ' Details')
             print("Epoch No.: %d\tTrain Loss = %.4f\t lr= %.6f\n" % (epoch, lossTr, lr))
+
+
 
         # save the model
         model_file_name = args.savedir + '/model_' + str(epoch + 1) + '.pth'
@@ -252,6 +264,7 @@ def train_model(args):
 
 
         # draw plots for visualization
+
         if epoch % 50 == 0 or epoch == (args.max_epochs - 1):
             # Plot the figures per 50 epochs
             fig1, ax1 = plt.subplots(figsize=(11, 8))
@@ -265,6 +278,8 @@ def train_model(args):
 
             plt.clf()
 
+        # 这里尝试画每20轮的mIoU
+        if epoch % 10 == 0 or epoch == (args.max_epochs - 1):
             fig2, ax2 = plt.subplots(figsize=(11, 8))
 
             ax2.plot(epoches, mIOU_val_list, label="Val IoU")
@@ -275,9 +290,32 @@ def train_model(args):
 
             plt.savefig(args.savedir + "iou_vs_epochs.png")
 
+            plt.clf()
+
+            #画acc图
+            fig3, ax3 = plt.subplots(figsize=(11, 8))
+
+            ax3.plot(epoches, acc_val_list, label="Val acc")
+            ax2.set_title("Acc vs epochs")
+            ax2.set_xlabel("Epochs")
+            ax2.set_ylabel("Current acc")
+            plt.legend(loc='lower right')
+
+            plt.savefig(args.savedir + "acc_vs_epochs.png")
+
             plt.close('all')
 
+
     logger.close()
+
+    #这里加了一个csv文件存储，存epoch，miou和acc
+    with open(args.savedir + 'validation_metrics.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["Epoch", "mIOU", "Accuracy"])
+        for epoch, mIOU, acc in zip(epoches, mIOU_val_list, acc_val_list):
+            writer.writerow([epoch, mIOU, acc])
+
+    print("Validation metrics saved to CSV file.")
 
 
 def train(args, train_loader, model, criterion, optimizer, epoch):
@@ -376,9 +414,9 @@ def val(args, val_loader, model):
         output = np.asarray(np.argmax(output, axis=2), dtype=np.uint8)
         data_list.append([gt.flatten(), output.flatten()])
 
-    meanIoU, per_class_iu = get_iou(data_list, args.classes)
-    return meanIoU, per_class_iu
-
+    meanIoU, per_class_iu,acc= get_iou(data_list, args.classes)
+    return meanIoU, per_class_iu, acc
+#return多了acc
 
 
 if __name__ == '__main__':

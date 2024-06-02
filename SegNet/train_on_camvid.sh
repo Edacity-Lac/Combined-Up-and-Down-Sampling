@@ -9,11 +9,11 @@ python train.py \
     --lr 5e-4 \
     --batch_size 8 \
     --train_type train \
-    --max_epochs 1000 \
+    --max_epochs 200 \
     --cuda True \
     # --random_mirror \
     # --random_scale \
-    # --optim \
+    # --optim \cd
     # --lr_schedule \
     # --num_cycles \
     # --poly_exp \
