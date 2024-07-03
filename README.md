@@ -40,14 +40,13 @@ $PATH_TO_DATASET/mini-imagenet
 ````
 - Monocular Depth Estimation 
 1. You can access the NYU V2 Depth dataset from [here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat);
-2. Run `split_data.py` to divide the data into training and evaluation sets.
+2. Run `split_data.py` to divide the data into training and test sets.
 3. The folds of your dataset need satisfy the following structures: 
 
 ```
 |-- data
 |  |-- test.mat
 |  |-- train.mat
-
 ```
 
 - Image Segmentation
@@ -64,7 +63,6 @@ $PATH_TO_DATASET/mini-imagenet
 |  |  |-- test
 |  |  |-- testannot
 |  |  |-- ...
-
 ```
 
 - Image Deraining
@@ -86,7 +84,6 @@ $PATH_TO_DATASET/mini-imagenet
     |   |   |   |   ├── rain              # rain images 
     |   |   |   |   └── norain            # clean images
     |   |   |   └── dataset_filename.txt
-
 ```
 - Object Detection
 We have a custom-labeled dataset for eye movement detection. If you would like access to this dataset, please contact us at [wong@hust.edu.cn](mailto:wong@hust.edu.cn).
@@ -109,7 +106,7 @@ We have a custom-labeled dataset for eye movement detection. If you would like a
      conda activate segnet && python train.py --model SegNet --dataset camvid --input_size '360,480' --num_workers 4 --classes 11 --lr 5e-4 --batch_size 8 --train_type train --max_epochs 200 --cuda True
      ```
 - Image Deraining
-1. mention the labeled, unlabeled, and validation dataset in lines 119-121 of train.py
+1. Mention the labeled, unlabeled, and validation dataset in lines 119-121 of train.py
      ```
        if category == 'derain':
            num_epochs = 50
