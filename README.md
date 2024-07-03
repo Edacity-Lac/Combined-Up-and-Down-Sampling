@@ -2,7 +2,7 @@
 
 This is a repository for the Pattern Recognition Course Project at Huazhong University of Science and Technology (HUST).
 
-We evaluated the performance of several well-known upsampling and downsampling operators on representative tasks, as well as a new combined up-and-down sampling operator, Co-Dysample, which we developed
+We evaluated the performance of several well-known upsampling and downsampling operators on representative tasks, as well as a new combined up-and-down sampling operator, Co-Dysample, which we developed.
 
 
 
@@ -11,7 +11,7 @@ We evaluated the performance of several well-known upsampling and downsampling o
 - Conv-Bilinear
 - MAX-pooling-Max-unpooling
 - Space2Depth-Depth2Space  [[paper](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Shi_Real-Time_Single_Image_CVPR_2016_paper.pdf)].
-- CARAFE++ [[paper](https://arxiv.org/pdf/2012.04733.pdf)][[code](https://github.com/open-mmlab/mmdetection)]![GitHub stars](http://img.shields.io/github/stars/open-mmlab/mmdetection.svg?logo=github&label=Stars)]
+- CARAFE++ [[paper](https://arxiv.org/pdf/2012.04733.pdf)][[code](https://github.com/open-mmlab/mmdetection)]![GitHub stars](http://img.shields.io/github/stars/open-mmlab/mmdetection.svg?logo=github&label=Stars)
 - IndexNet [[paper](https://arxiv.org/pdf/1908.09895v2.pdf)][[code](https://github.com/poppinace/indexnet_matting)]![GitHub stars](http://img.shields.io/github/stars/poppinace/indexnet_matting.svg?logo=github&label=Stars)
 
 
