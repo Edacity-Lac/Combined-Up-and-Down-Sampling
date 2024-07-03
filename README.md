@@ -128,7 +128,7 @@ We have a custom-labeled dataset for eye movement detection. If you would like a
    python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
      ```
 
-## Result
+## Results
 | Comprehensive Ranking | Operator Name              | Specialization Areas            |
 |-----------------------|----------------------------|----------------------------------|
 | 1                     | Indexed_DS-Indexed_US      | All Areas                       |
