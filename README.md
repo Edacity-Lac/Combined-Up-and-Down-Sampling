@@ -43,8 +43,9 @@ $PATH_TO_DATASET/mini-imagenet
 ## Training
 - Image Reconstruction
 1. Run the following command to train the network:
-
+     ```
     python train.py
+     ```
   
 - Monocular Depth Estimation
 1. Run the following command to train the network:
