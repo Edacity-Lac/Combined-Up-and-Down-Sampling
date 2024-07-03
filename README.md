@@ -18,13 +18,13 @@ We evaluate the performance of some famous upsampling dowmsampling operators on 
 ## The Tasks We Evaluate
 - Image Reconstruction based on Standard encoder-decoder architecture [[paper](https://arxiv.org/pdf/1908.09895v2.pdf)]
 - Monocular Depth Estimation based on FastDepth [[paper](https://arxiv.org/pdf/1903.03273)] [[code](https://github.com/dwofk/fast-depth)]
-
+- Image Segmentation based on SegNet [[paper](https://arxiv.org/pdf/1511.00561)] [[code](https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks)]
 
 
 ## Prepare Your Data
 - Image Reconstruction 
 1. You can access the Mini-Imagenet dataset from [[here](https://lyy.mpi-inf.mpg.de/mtl/download/Lmzjm9tX.html)] ;
-2. The final path structure used in my code looks like this:
+2. The folds of your dataset need satisfy the following structures: 
 
 ````
 $PATH_TO_DATASET/mini-imagenet
@@ -37,7 +37,34 @@ $PATH_TO_DATASET/mini-imagenet
 ````
 - Monocular Depth Estimation 
 1. You can access the NYU V2 Depth dataset from [[here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)] ;
-2. Run split_data.py to split training and evaluation data.
+2. Run `split_data.py` to divide the data into training and evaluation sets.
+
+- Image Segmentation
+1. You can download [**camvid**](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset from [here](https://github.com/alexgkendall/SegNet-Tutorial/tree/master/CamVid).
+2. The folds of your dataset need satisfy the following structures: 
+
+```
+|-- dataset
+|  |-- camvid
+|  |  |-- train
+|  |  |-- trainannot
+|  |  |-- val
+|  |  |-- valannot
+|  |  |-- test
+|  |  |-- testannot
+|  |  |-- ...
+|  |-- cityscapes
+|  |  |-- leftImg8bit
+|  |  |  |-- train
+|  |  |  |-- val
+|  |  |  |-- test
+|  |  |-- gtFine
+|  |  |  |-- train
+|  |  |  |-- val
+|  |  |  |-- test
+|  |  |-- ...
+```
+
 
 
 ## Training
@@ -52,9 +79,23 @@ $PATH_TO_DATASET/mini-imagenet
      ```
     python main.py -mode train -backbone mobilenetv2 --criterion l1 --gpu True -e 30 --encoder_decoder_choice <your choice>  --bsize 16
      ```
-
+- Image Segmentation
     
-
+1. Run the following command to train the network:
+     ```
+    conda activate segnet && \
+python train.py \
+    --model SegNet \
+    --dataset camvid \
+    --input_size '360,480' \
+    --num_workers 4 \
+    --classes 11 \
+    --lr 5e-4 \
+    --batch_size 8 \
+    --train_type train \
+    --max_epochs 200 \
+    --cuda True \
+     ```
 
 
 
