@@ -86,7 +86,7 @@ $PATH_TO_DATASET/mini-imagenet
     |   |   |   └── dataset_filename.txt
 ```
 - Object Detection
-We have a custom-labeled dataset for eye movement detection. If you would like access to this dataset, please contact us at [wong@hust.edu.cn](mailto:wong@hust.edu.cn).
+1. We have a custom-labeled dataset for eye movement detection. If you would like access to this dataset, please contact us at [wong@hust.edu.cn](mailto:wong@hust.edu.cn).
 
 ## Training
 - Image Reconstruction
