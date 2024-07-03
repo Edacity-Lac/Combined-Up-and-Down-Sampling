@@ -17,7 +17,7 @@ We evaluate the performance of some famous upsampling dowmsampling operators on 
 
 ## The Tasks We Evaluate
 - Standard encoder-decoder architecture on Image Reconstruction [[paper](https://arxiv.org/pdf/1908.09895v2.pdf)]
-  
+- FastDepth   NYU V2 Depth dataset
 
 
 
@@ -35,18 +35,19 @@ $PATH_TO_DATASET/mini-imagenet
 ├──── test
 ├──── val
 ````
-- Image Reconstruction 
+- Monocular Depth Estimation 
 1. Please download from [[here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)] for the NYU V2 Depth dataset;
 2. Run split_data.py to split training and evaluation data.
 
 
 ## Training
 - Image Reconstruction
-Run the following command to train the network:
+1. Run the following command to train the network:
 
     python train.py
+  
 - Monocular Depth Estimation
-Run the following command to train the network:
+1. Run the following command to train the network:
 
     python main.py -mode train -backbone mobilenetv2 --criterion l1 --gpu True -e 30 --encoder_decoder_choice <your choice>  --bsize 16
 
