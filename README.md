@@ -20,6 +20,7 @@ We evaluate the performance of some famous upsampling dowmsampling operators on 
 - Monocular Depth Estimation based on FastDepth [[paper](https://arxiv.org/pdf/1903.03273)] [[code](https://github.com/dwofk/fast-depth)]
 - Image Segmentation based on SegNet [[paper](https://arxiv.org/pdf/1511.00561)] [[code](https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks)]
 - Image Deraining based on SyntoReal [[paper](https://arxiv.org/pdf/2006.05580)] [[code](https://github.com/rajeevyasarla/Syn2Real)]
+- Object Detection based on YOLOv3 [[paper](https://arxiv.org/abs/1804.02767)] [[code](https://github.com/ultralytics/yolov3)]
 
 
 ## Prepare Your Data
@@ -103,7 +104,6 @@ $PATH_TO_DATASET/mini-imagenet
 1. Run the following command to train the network:
      ```
      conda activate segnet && python train.py --model SegNet --dataset camvid --input_size '360,480' --num_workers 4 --classes 11 --lr 5e-4 --batch_size 8 --train_type train --max_epochs 200 --cuda True
-
      ```
 - Image Deraining
 1. mention the labeled, unlabeled, and validation dataset in lines 119-121 of train.py
@@ -113,9 +113,9 @@ $PATH_TO_DATASET/mini-imagenet
     train_data_dir = './data/train/derain/'
     val_data_dir = './data/test/derain/'
 
- labeled_name = 'real_input1.txt'
-unlabeled_name = 'real_input2.txt'
-val_filename = 'SIRR_test.txt'
+    labeled_name = 'real_input1.txt'
+    unlabeled_name = 'real_input2.txt'
+    val_filename = 'SIRR_test.txt'
 ``` 
 2. Run the following command to train the base network without Gaussian processes
 ```
