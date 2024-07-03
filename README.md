@@ -132,12 +132,11 @@ We have a custom-labeled dataset for eye movement detection. If you would like a
 | Comprehensive Ranking | Operator Name              | Specialization Areas            |
 |-----------------------|----------------------------|----------------------------------|
 | 1                     | Indexed_DS-Indexed_US      | All Areas                       |
-| 2                     | Space2Depth-Depth2Space    | Semantic Segmentation, Denoising |
-| 3                     | Co-Dysample                | Depth Estimation, Image Reconstruction |
-| 4                     | MAX_pooling-MAX_unpooling  | Semantic Segmentation, Image Reconstruction, Denoising |
+| 2                     | Space2Depth-Depth2Space    | Image Segmentation, Image Deraining |
+| 3                     | Co-Dysample                | Monocular Depth Estimation, Image Reconstruction |
+| 4                     | MAX_pooling-MAX_unpooling  | Image Segmentation, Image Reconstruction, Image Deraining |
 | 5                     | Conv - Deconv              | Object Detection                |
-| 6                     | CARAFE++                   | Depth Estimation                |
+| 6                     | CARAFE++                   | Monocular Depth Estimation                |
 | 7                     | Conv - Bilinear            | Object Detection                |
 
-   Table  Comprehensive Performance Summary of Operators
 
