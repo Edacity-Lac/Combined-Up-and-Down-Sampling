@@ -25,7 +25,7 @@ We evaluate the performance of some famous upsampling dowmsampling operators on 
 
 ## Prepare Your Data
 - Image Reconstruction 
-1. You can access the Mini-Imagenet dataset from [[here](https://lyy.mpi-inf.mpg.de/mtl/download/Lmzjm9tX.html)] ;
+1. You can access the Mini-Imagenet dataset from [here(https://lyy.mpi-inf.mpg.de/mtl/download/Lmzjm9tX.html)] ;
 2. The folds of your dataset need satisfy the following structures: 
 
 ````
@@ -38,7 +38,7 @@ $PATH_TO_DATASET/mini-imagenet
 ├──── val
 ````
 - Monocular Depth Estimation 
-1. You can access the NYU V2 Depth dataset from [[here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)] ;
+1. You can access the NYU V2 Depth dataset from [here(http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)] ;
 2. Run `split_data.py` to divide the data into training and evaluation sets.
 3. The folds of your dataset need satisfy the following structures: 
 
@@ -107,20 +107,19 @@ $PATH_TO_DATASET/mini-imagenet
      ```
 - Image Deraining
 1. mention the labeled, unlabeled, and validation dataset in lines 119-121 of train.py
-```
-    if category == 'derain':
-    num_epochs = 50
-    train_data_dir = './data/train/derain/'
-    val_data_dir = './data/test/derain/'
-
-    labeled_name = 'real_input1.txt'
-    unlabeled_name = 'real_input2.txt'
-    val_filename = 'SIRR_test.txt'
-``` 
+     ```
+       if category == 'derain':
+          num_epochs = 50
+          train_data_dir = './data/train/derain/'
+          val_data_dir = './data/test/derain/'
+       labeled_name = 'real_input1.txt'
+       unlabeled_name = 'real_input2.txt'
+       val_filename = 'SIRR_test.txt'
+    ``` 
 2. Run the following command to train the base network without Gaussian processes
-```
+    ```
     python train.py  -train_batch_size 2  -category derain -exp_name DDN_SIRR_withoutGP  -lambda_GP 0.00 -epoch_start 0
-```
+    ```
 
 
 ## Result(视版面待定,少的话放个总排名）
