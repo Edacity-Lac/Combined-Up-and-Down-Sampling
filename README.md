@@ -125,16 +125,14 @@ $PATH_TO_DATASET/mini-imagenet
      ```
    python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
      ```
-
 ## Results
-| Comprehensive Ranking | Operator Name              | Specialization Areas            |
-|-----------------------|----------------------------|----------------------------------|
-| 1                     | Indexed_DS-Indexed_US      | All Areas                       |
-| 2                     | Space2Depth-Depth2Space    | Image Segmentation, Image Deraining |
-| 3                     | Co-Dysample                | Monocular Depth Estimation, Image Reconstruction |
-| 4                     | MAX_pooling-MAX_unpooling  | Image Segmentation, Image Reconstruction, Image Deraining |
-| 5                     | Conv - Deconv              | Object Detection                |
-| 6                     | CARAFE++                   | Monocular Depth Estimation                |
-| 7                     | Conv - Bilinear            | Object Detection                |
-
+| Comprehensive Ranking | Application Areas                     |
+| --------------------- | ------------------------------------- |
+| Indexed_DS-Indexed_US | 1 | All areas except object detection |
+| CARAFE++              | 2 | Depth estimation, image denoising, object detection |
+| Space2Depth-Depth2Space| 3 | Semantic segmentation, image denoising |
+| Co-Dysample           | 4 | Depth estimation, image reconstruction |
+| Conv - Deconv         | 5 | Object detection |
+| Conv - Bilinear       | 6 | Object detection |
+| MAX_pooling-MAX_unpooling | 7 | Semantic segmentation, image reconstruction |
 
