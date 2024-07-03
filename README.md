@@ -35,13 +35,22 @@ $PATH_TO_DATASET/mini-imagenet
 ├──── test
 ├──── val
 ````
+- Image Reconstruction 
+1. Please download from [[here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)] for the NYU V2 Depth dataset;
+2. Run split_data.py to split training and evaluation data.
 
 
 ## Training
 - Image Reconstruction
 Run the following command to train the network:
 
-    python train.py 
+    python train.py
+- Monocular Depth Estimation
+Run the following command to train the network:
+
+    python main.py -mode train -backbone mobilenetv2 --criterion l1 --gpu True -e 30 --encoder_decoder_choice <your choice>  --bsize 16
+
+
     
 
 
