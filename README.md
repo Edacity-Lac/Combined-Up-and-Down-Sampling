@@ -50,7 +50,7 @@ $PATH_TO_DATASET/mini-imagenet
 ```
 
 - Image Segmentation
-1. You can download [**camvid**](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset from [here](https://github.com/alexgkendall/SegNet-Tutorial/tree/master/CamVid);
+1. You can access [**camvid**](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset from [here](https://github.com/alexgkendall/SegNet-Tutorial/tree/master/CamVid);
 2. The folds of your dataset need satisfy the following structures: 
 
 ```
