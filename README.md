@@ -128,4 +128,16 @@ We have a custom-labeled dataset for eye movement detection. If you would like a
    python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
      ```
 
-## Result(视版面待定,少的话放个总排名）
+## Result
+| Comprehensive Ranking | Operator Name              | Specialization Areas            |
+|-----------------------|----------------------------|----------------------------------|
+| 1                     | Indexed_DS-Indexed_US      | All Areas                       |
+| 2                     | Space2Depth-Depth2Space    | Semantic Segmentation, Denoising |
+| 3                     | Co-Dysample                | Depth Estimation, Image Reconstruction |
+| 4                     | MAX_pooling-MAX_unpooling  | Semantic Segmentation, Image Reconstruction, Denoising |
+| 5                     | Conv - Deconv              | Object Detection                |
+| 6                     | CARAFE++                   | Depth Estimation                |
+| 7                     | Conv - Bilinear            | Object Detection                |
+
+   Table  Comprehensive Performance Summary of Operators
+
