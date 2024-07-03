@@ -17,7 +17,7 @@ We evaluated the performance of several well-known upsampling and downsampling o
 
 ## The Tasks We Evaluate
 - Image Reconstruction based on Standard encoder-decoder architecture [[paper](https://arxiv.org/pdf/1908.09895v2.pdf)]
-- Monocular Depth Estimation based on FastDepth [[paper](https://arxiv.org/pdf/1903.03273)] [[code](https://github.com/dwofk/fast-depth)]![GitHub stars](https://github.com/dwofk/fast-depth.svg?logo=github&label=Stars)
+- Monocular Depth Estimation based on FastDepth [[paper](https://arxiv.org/pdf/1903.03273)] [[code](https://github.com/dwofk/fast-depth)] ![GitHub stars](https://img.shields.io/github/stars/dwofk/fast-depth?style=social)
 - Image Segmentation based on SegNet [[paper](https://arxiv.org/pdf/1511.00561)] [[code](https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks)]![GitHub stars](https://github.com/xiaoyufenfei/Efficient-Segmentation-Networks.svg?logo=github&label=Stars)
 - Image Deraining based on SyntoReal [[paper](https://arxiv.org/pdf/2006.05580)] [[code](https://github.com/rajeevyasarla/Syn2Real)]![GitHub stars](https://github.com/rajeevyasarla/Syn2Real.svg?logo=github&label=Stars)
 - Object Detection based on YOLOv3 [[paper](https://arxiv.org/abs/1804.02767)] [[code](https://github.com/ultralytics/yolov3)]![GitHub stars](https://github.com/ultralytics/yolov3.svg?logo=github&label=Stars)
