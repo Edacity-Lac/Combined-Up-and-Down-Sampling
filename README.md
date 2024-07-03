@@ -87,6 +87,8 @@ $PATH_TO_DATASET/mini-imagenet
     |   |   |   └── dataset_filename.txt
 
 ```
+- Object Detection
+We have a custom-labeled dataset for eye movement detection. If you would like access to this dataset, please contact us at [wong@hust.edu.cn](mailto:wong@hust.edu.cn).
 
 ## Training
 - Image Reconstruction
@@ -109,9 +111,9 @@ $PATH_TO_DATASET/mini-imagenet
 1. mention the labeled, unlabeled, and validation dataset in lines 119-121 of train.py
      ```
        if category == 'derain':
-          num_epochs = 50
-          train_data_dir = './data/train/derain/'
-          val_data_dir = './data/test/derain/'
+           num_epochs = 50
+           train_data_dir = './data/train/derain/'
+           val_data_dir = './data/test/derain/'
        labeled_name = 'real_input1.txt'
        unlabeled_name = 'real_input2.txt'
        val_filename = 'SIRR_test.txt'
@@ -120,6 +122,10 @@ $PATH_TO_DATASET/mini-imagenet
     ```
     python train.py  -train_batch_size 2  -category derain -exp_name DDN_SIRR_withoutGP  -lambda_GP 0.00 -epoch_start 0
     ```
-
+- Object Detection
+1. Run the following command to train the network:
+     ```
+   python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
+     ```
 
 ## Result(视版面待定,少的话放个总排名）
