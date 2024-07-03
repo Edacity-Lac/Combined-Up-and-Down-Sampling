@@ -53,16 +53,7 @@ $PATH_TO_DATASET/mini-imagenet
 |  |  |-- test
 |  |  |-- testannot
 |  |  |-- ...
-|  |-- cityscapes
-|  |  |-- leftImg8bit
-|  |  |  |-- train
-|  |  |  |-- val
-|  |  |  |-- test
-|  |  |-- gtFine
-|  |  |  |-- train
-|  |  |  |-- val
-|  |  |  |-- test
-|  |  |-- ...
+
 ```
 
 
@@ -83,18 +74,8 @@ $PATH_TO_DATASET/mini-imagenet
     
 1. Run the following command to train the network:
      ```
-    conda activate segnet && \
-python train.py \
-    --model SegNet \
-    --dataset camvid \
-    --input_size '360,480' \
-    --num_workers 4 \
-    --classes 11 \
-    --lr 5e-4 \
-    --batch_size 8 \
-    --train_type train \
-    --max_epochs 200 \
-    --cuda True \
+conda activate segnet && python train.py --model SegNet --dataset camvid --input_size '360,480' --num_workers 4 --classes 11 --lr 5e-4 --batch_size 8 --train_type train --max_epochs 200 --cuda True
+
      ```
 
 
