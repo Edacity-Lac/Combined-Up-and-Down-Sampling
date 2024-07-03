@@ -25,7 +25,7 @@ We evaluate the performance of some famous upsampling dowmsampling operators on 
 
 ## Prepare Your Data
 - Image Reconstruction 
-1. You can access the Mini-Imagenet dataset from [here(https://lyy.mpi-inf.mpg.de/mtl/download/Lmzjm9tX.html)] ;
+1. You can access the Mini-Imagenet dataset  from [here](https://lyy.mpi-inf.mpg.de/mtl/download/Lmzjm9tX.html); 
 2. The folds of your dataset need satisfy the following structures: 
 
 ````
@@ -38,7 +38,7 @@ $PATH_TO_DATASET/mini-imagenet
 ├──── val
 ````
 - Monocular Depth Estimation 
-1. You can access the NYU V2 Depth dataset from [here(http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat)] ;
+1. You can access the NYU V2 Depth dataset from [here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat);
 2. Run `split_data.py` to divide the data into training and evaluation sets.
 3. The folds of your dataset need satisfy the following structures: 
 
@@ -50,7 +50,7 @@ $PATH_TO_DATASET/mini-imagenet
 ```
 
 - Image Segmentation
-1. You can download [**camvid**](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset from [here](https://github.com/alexgkendall/SegNet-Tutorial/tree/master/CamVid).
+1. You can download [**camvid**](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset from [here](https://github.com/alexgkendall/SegNet-Tutorial/tree/master/CamVid);
 2. The folds of your dataset need satisfy the following structures: 
 
 ```
@@ -67,7 +67,7 @@ $PATH_TO_DATASET/mini-imagenet
 ```
 
 - Image Deraining
-1. You can access the NYU V2 Depth dataset from [[here](https://pan.baidu.com/s/1SR7yULy0VZ_JZ4Vawqs7gg#list/path=%2F?qq-pf-to=pcqq.c2c)] ;
+1. You can access the NYU V2 Depth dataset from [here](https://pan.baidu.com/s/1SR7yULy0VZ_JZ4Vawqs7gg#list/path=%2F?qq-pf-to=pcqq.c2c);
 2. The folds of your dataset need satisfy the following structures: 
 
 ```
