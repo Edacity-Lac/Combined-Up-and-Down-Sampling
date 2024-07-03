@@ -1,8 +1,8 @@
 # Combined-Up-and-Down-Sampling
 
-This is a repository for course project.
+This is a repository for the Pattern Recognition Course Project at Huazhong University of Science and Technology (HUST).
 
-We evaluate the performance of some famous upsampling dowmsampling operators on some representative tasks and a new Combined-Up-and-Down-Sampling operators Co-Dysample invented by ourself.
+We evaluated the performance of several well-known upsampling and downsampling operators on representative tasks, as well as a new combined up-and-down sampling operator, Co-Dysample, which we developed
 
 
 
