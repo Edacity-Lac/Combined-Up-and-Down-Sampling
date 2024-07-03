@@ -66,7 +66,7 @@ $PATH_TO_DATASET/mini-imagenet
 ```
 
 - Image Deraining
-1. You can access the NYU V2 Depth dataset from [here](https://pan.baidu.com/s/1SR7yULy0VZ_JZ4Vawqs7gg#list/path=%2F?qq-pf-to=pcqq.c2c);
+1. You can access the Deraining dataset from [here](https://pan.baidu.com/s/1SR7yULy0VZ_JZ4Vawqs7gg#list/path=%2F?qq-pf-to=pcqq.c2c);
 2. The folds of your dataset need satisfy the following structures: 
 
 ```
