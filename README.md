@@ -39,7 +39,7 @@ $PATH_TO_DATASET/mini-imagenet
 ├──── val
 ````
 - Monocular Depth Estimation 
-1. You can access the NYU V2 Depth dataset from [here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat) ,or by running `prepare_dataset.py` .;
+1. You can access the NYU V2 Depth dataset from [here](http://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat) , or by running `prepare_dataset.py` .;
 2. Run `split_data.py` to divide the data into training and test sets.
 3. The folds of your dataset need satisfy the following structures: 
 
