@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>P0085.jpg</filename>
+	<path>E:\wyk\projects\PaddleSeg-release-2.8\data\optic_disc_seg\JPEGImages\P0085.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>512</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>eyeball</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>121</xmin>
+			<ymin>171</ymin>
+			<xmax>347</xmax>
+			<ymax>401</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>my</folder>
+	<filename>N0054.jpg</filename>
+	<path>E:\wyk\yolov3\my\N0054.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>512</width>
+		<height>496</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>eyeball</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>9</xmin>
+			<ymin>183</ymin>
+			<xmax>73</xmax>
+			<ymax>265</ymax>
+		</bndbox>
+	</object>
+</annotation>
